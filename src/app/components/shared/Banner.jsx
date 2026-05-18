@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <div className="max-w-7xl shadow-md bg-white">
 
-            <div className="max-w-6xl mx-auto grid grid-cols-2 p-10 gap-10 ">
+            <div className="max-w-6xl mx-auto lg:flex p-10 gap-10 sm:grid grid-cols-1 sm: grid gap-y-4 ">
 
 
 
@@ -31,7 +31,7 @@ const Banner = () => {
                         perfect vacation vibe.
                     </p>
 
-                    <div className="flex gap-4">
+                    <div className="grid grid-cols-1 gap-y-10 mt-6 lg:flex lg:gap-4">
 
                         <div>
                             <Link

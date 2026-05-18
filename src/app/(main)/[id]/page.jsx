@@ -1,9 +1,10 @@
+import AllProduct from '@/app/allProduct/AllProduct'
 import React from 'react'
 
 const DetailsPage = () => {
   return (
     <div>
-      DetailsPage
+      <AllProduct/>
     </div>
   )
 }
