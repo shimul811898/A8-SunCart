@@ -64,5 +64,49 @@
     "category": "Gadgets",
     "image": "https://i.ibb.co/7kQ6M7Q/mini-fan.png",
     "description": "Rechargeable portable mini fan to keep you cool anytime, anywhere."
+  },
+  {
+    "id": 7,
+    "name": "Beach Volleyball",
+    "brand": "FunPlay",
+    "price": 22,
+    "rating": 4.4,
+    "stock": 14,
+    "category": "Sports",
+    "image": "https://i.ibb.co/xL0V5n9/volleyball.png",
+    "description": "Durable beach volleyball perfect for summer games and outdoor fun."
+  },
+  {
+    "id": 8,
+    "name": "Cooling Water Bottle",
+    "brand": "HydroCool",
+    "price": 19,
+    "rating": 4.8,
+    "stock": 30,
+    "category": "Lifestyle",
+    "image": "https://i.ibb.co/VB3Y8XQ/water-bottle.png",
+    "description": "Insulated cooling water bottle that keeps drinks cold for hours."
+  },
+  {
+    "id": 9,
+    "name": "Tropical Beach Towel",
+    "brand": "SeaWave",
+    "price": 24,
+    "rating": 4.6,
+    "stock": 16,
+    "category": "Beach Accessories",
+    "image": "https://i.ibb.co/2h5yW4x/beach-towel.png",
+    "description": "Soft tropical beach towel with vibrant summer-inspired patterns."
+  },
+  {
+    "id": 10,
+    "name": "Aloe Vera After Sun Gel",
+    "brand": "NatureGlow",
+    "price": 17,
+    "rating": 4.9,
+    "stock": 22,
+    "category": "Skincare",
+    "image": "https://i.ibb.co/f4Q4j6h/aloe-gel.png",
+    "description": "Refreshing aloe vera gel that soothes and cools skin after sun exposure."
   }
 ]
