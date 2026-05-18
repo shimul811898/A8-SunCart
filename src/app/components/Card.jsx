@@ -55,11 +55,10 @@ const Card = ({ photo }) => {
         </div>
 
 
-        <Link
-          href={`/products/${photo.id}`}
-          className="block mt-4 text-center py-2 rounded-xl bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold hover:from-orange-500 hover:to-yellow-600 transition"
-        >
-          View Details
+        <Link href={`/${photo.id}`}>
+          <button className="w-full mt-4 text-center py-2 rounded-xl bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold hover:from-orange-500 hover:to-yellow-600 transition">
+            View Details
+          </button>
         </Link>
 
       </div>
