@@ -7,14 +7,14 @@ import NavLink from "./NavLink";
 
 const Navbar = () => {
   return (
-    <div className="max-w-7xl">
-      <nav className="max-w-6xl rounded-lg mt-5 border-2 border-pink-500 mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between sm:space-y-0 space-y-4 px-6 py-5 shadow-md bg-white">
+    <div className="max-w-7xl shadow-md bg-white z-40">
+      <nav className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between sm:space-y-0 space-y-4 px-6 py-5">
 
 
         <div>
           <div className="flex items-center gap-2 text-2xl font-extrabold text-orange-500">
             <FaSun />
-            <span>SunCart</span>
+            <span  className="bg-gradient-to-r from-orange-500 via-amber-350 to-orange-300 bg-clip-text text-transparent">SunCart</span>
           </div>
         </div>
 

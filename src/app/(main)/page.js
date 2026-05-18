@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Banner from "../components/shared/Banner";
 
 export default function Home() {
   return (
-   <h2 className="text-3xl text-red-800">Homepage</h2>
+    <Banner />
   );
 }
