@@ -14,10 +14,14 @@ const Product = async () => {
   return (
     <div className="mt-10 mx-auto max-w-6xl px-4">
 
-      <h1 className="text-3xl font-bold mb-6">
-        Top Product
-      </h1>
+    
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-orange-500">
+          Top Products
+        </h1>
+      </div>
 
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {topPhotos.map((photo) => (

@@ -7,7 +7,7 @@
     "rating": 4.8,
     "stock": 12,
     "category": "Accessories",
-    "image": "https://i.ibb.co/9V0K6GQ/sunglasses.png",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80",
     "description": "Stylish UV protection sunglasses perfect for sunny beach days and outdoor adventures."
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.7,
     "stock": 15,
     "category": "Fashion",
-    "image": "https://i.ibb.co/Q8L7K9m/floral-shirt.png",
+    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&q=80",
     "description": "Lightweight floral shirt designed for maximum comfort during hot summer days."
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.9,
     "stock": 20,
     "category": "Skincare",
-    "image": "https://i.ibb.co/Y3H5x4J/sunscreen.png",
+    "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=500&q=80",
     "description": "Protect your skin from harmful UV rays while keeping it hydrated and fresh."
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.6,
     "stock": 10,
     "category": "Accessories",
-    "image": "https://i.ibb.co/0y2Qw5M/beach-hat.png",
+    "image": "https://images.unsplash.com/photo-1533461502717-8354648407a9?w=500&q=80",
     "description": "Classic straw hat for beach vacations and summer outings with elegant style."
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.5,
     "stock": 18,
     "category": "Footwear",
-    "image": "https://i.ibb.co/rmP9f0f/sandals.png",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80",
     "description": "Comfortable and trendy sandals ideal for daily summer wear and travel."
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.7,
     "stock": 25,
     "category": "Gadgets",
-    "image": "https://i.ibb.co/7kQ6M7Q/mini-fan.png",
+    "image": "https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=500&q=80",
     "description": "Rechargeable portable mini fan to keep you cool anytime, anywhere."
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.4,
     "stock": 14,
     "category": "Sports",
-    "image": "https://i.ibb.co/xL0V5n9/volleyball.png",
+    "image": "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=500&q=80",
     "description": "Durable beach volleyball perfect for summer games and outdoor fun."
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.8,
     "stock": 30,
     "category": "Lifestyle",
-    "image": "https://i.ibb.co/VB3Y8XQ/water-bottle.png",
+    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=80",
     "description": "Insulated cooling water bottle that keeps drinks cold for hours."
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.6,
     "stock": 16,
     "category": "Beach Accessories",
-    "image": "https://i.ibb.co/2h5yW4x/beach-towel.png",
+    "image": "https://images.unsplash.com/photo-1576016770956-debb63d900bb?w=500&q=80",
     "description": "Soft tropical beach towel with vibrant summer-inspired patterns."
   },
   {
@@ -106,7 +106,7 @@
     "rating": 4.9,
     "stock": 22,
     "category": "Skincare",
-    "image": "https://i.ibb.co/f4Q4j6h/aloe-gel.png",
+    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80",
     "description": "Refreshing aloe vera gel that soothes and cools skin after sun exposure."
   }
 ]
