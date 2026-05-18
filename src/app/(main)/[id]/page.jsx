@@ -18,7 +18,7 @@ const ProductDetails = async ({ params }) => {
 
 
   return (
-    <div className="max-w-7xl shadow-md bg-white ">
+    <div className="max-w-7xl shadow-md bg-white text-black ">
       <div className="max-w-5xl mx-auto py-6 shadow-lg bg-gray-100 mt-10 lg:flex px-10  gap-10 sm:grid grid-cols-1 sm: grid gap-y-4 " >
 
         <div>
@@ -43,7 +43,7 @@ const ProductDetails = async ({ params }) => {
                 <p className="text-[16px] font-bold" >{product.rating}</p>
               </div>
 
-              <div className="bg-[#F8FAFC] shadow-lg py-6 border border-slate-300 px-4  rounded-lg " >
+              <div className="bg-[#F8FAFC] text-black shadow-lg py-6 border border-slate-300 px-4  rounded-lg " >
                 <h3 >Brand:</h3>
                 <p className="text-[16px] font-bold" >{product.brand}</p>
               </div >

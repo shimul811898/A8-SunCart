@@ -33,9 +33,7 @@ const Card = ({ photo }) => {
           {photo.name}
         </h2>
 
-        <p className="text-sm text-gray-500 mt-1">
-          Brand: {photo.brand}
-        </p>
+        
 
         <p className="text-xs text-gray-400 mt-2 line-clamp-2">
           {photo.description}
@@ -48,9 +46,7 @@ const Card = ({ photo }) => {
             ${photo.price}
           </span>
 
-          <span className="text-green-600 text-xs font-medium">
-            In Stock
-          </span>
+         
 
         </div>
 

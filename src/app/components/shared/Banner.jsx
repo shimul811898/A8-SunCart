@@ -16,7 +16,7 @@ const Banner = () => {
 
 
                     <h1 className="text-5xl font-bold leading-tight">
-                        <span className="block mb-2">
+                        <span className="block mb-2 text-black ">
                             Welcome to
                         </span>
 
@@ -52,7 +52,7 @@ const Banner = () => {
 
                     </div>
                 </div>
-                <div className="rounded-lg">
+                <div className="rounded-lg sm: grid mt-3.5">
                     <Image
                         src={userBanner}
                         alt="Summer Banner"

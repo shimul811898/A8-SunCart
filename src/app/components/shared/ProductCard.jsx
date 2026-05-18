@@ -33,10 +33,6 @@ const ProductCard = ({ photo }) => {
           {photo.name}
         </h2>
 
-        <p className="text-sm text-gray-500 mt-1">
-          Brand: {photo.brand}
-        </p>
-
         <p className="text-xs text-gray-400 mt-2 line-clamp-2">
           {photo.description}
         </p>
@@ -46,10 +42,6 @@ const ProductCard = ({ photo }) => {
 
           <span className="text-orange-500 font-bold text-lg">
             ${photo.price}
-          </span>
-
-          <span className="text-green-600 text-xs font-medium">
-            ${photo.stock} Stock
           </span>
 
         </div>
