@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className="max-w-7xl bg-gradient-to-r from-red-500 to-pink-500 mt-8 text-white ">
             <div className="max-w-6xl grid lg:grid-cols-2 max-w-5xl mx-auto py-16 px-4 sm:grid-cols-1 gap-y-3 " >
-                <div className="space-y-2 card  ">
+                <div className="space-y-2   ">
                     <h1 className="text-2xl font-bold">SunCart – <br /> Summer <br /> Essentials Store</h1>
                     <p className="text-gray-400 text-[11px] ">Premium summer essentials for stylish <br /> living. Enjoy the sunshine with <br /> SunCart’s trendy and comfortable <br /> collection</p>
                 </div>

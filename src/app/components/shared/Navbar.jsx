@@ -53,6 +53,11 @@ const Navbar = () => {
             className="btn text-white px-4 py-2 rounded-lg border-0 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600">
             Login
           </Link>
+          <Link
+            href="/signup"
+            className="btn text-white px-4 py-2 rounded-lg border-0 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600">
+            Register
+          </Link>
 
         </div>
 

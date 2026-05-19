@@ -1,4 +1,4 @@
-import { Link } from "lucide-react";
+
 
 const ProductDetails = async ({ params }) => {
   const { id } = await params;
