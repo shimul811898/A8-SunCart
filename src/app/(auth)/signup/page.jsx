@@ -1,107 +1,182 @@
 "use client";
-import { Check } from "lucide-react";
+import { toast } from "react-hot-toast";
+import Google from "@/app/assets/Google.jpg";
+import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { FaEye } from "react-icons/fa";
 
-import {
-  Button,
-  Card,
-  Description,
-  FieldError,
-  Form,
-  Input,
-  Label,
-  TextField,
-} from "@heroui/react";
-import { authClient } from "@/app/lib/auth-client";
-export default function SignUpPage() {
-  const onSubmit = async (e) => {
-    e.preventDefault();
+const signUpPage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    const name = e.target.name.value;
-    const image = e.target.image.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+  const [isShowPassword, setIsShowPassword] = useState(false)
 
 
-    const { data, error } = await authClient.signUp.email({
-      name,
-      image,
-      email,
-      password
-    })
-    console.log({ data, error })
-   };
+  const handleLoginFunc = async (data) => {
+    console.log(data);
+
+    const { email, name, photo, password } = data;
+
+    const { data: res, error } = await authClient.signUp.email({
+      name: name,
+      email: email,
+      password: password,
+      image: photo,
+      callbackURL: "/",
+    });
+    console.log(res, error)
+    if (error) {
+      alert(error.message);
+    }
+    if (res) {
+      alert("Sign Up Succesfully");
+    }
+  };
 
   return (
-    <Card className="border mx-auto  py-10 mt-5">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-5">
+      <fieldset className="bg-white shadow-2xl rounded-2xl w-full max-w-sm p-6 space-y-4">
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField>
 
-        <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
-          <FieldError />
-        </TextField>
+        <div className="text-center space-y-1">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
+            SunCart
+          </h1>
 
-        <TextField
-          isRequired
-          name="email"
-          type="email"
-          validate={(value) => {
-            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-              return "Please enter a valid email address";
-            }
-
-            return null;
-          }}
-        >
-          <Label>Email</Label>
-          <Input placeholder="john@example.com" />
-          <FieldError />
-        </TextField>
-
-        <TextField
-          isRequired
-          minLength={8}
-          name="password"
-          type="password"
-          validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-
-            return null;
-          }}
-        >
-          <Label>Password</Label>
-          <Input placeholder="Enter your password" />
-          <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
-          </Description>
-          <FieldError />
-        </TextField>
-
-        <div className="flex gap-2">
-          <Button type="submit">
-            <Check />
-            Submit
-          </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+          <p className="text-sm text-gray-600 font-medium">
+            Sign Up to your account
+          </p>
         </div>
-      </Form>
-    </Card>
+
+
+        <form
+          className="space-y-4"
+          onSubmit={handleSubmit(handleLoginFunc)}
+        >
+
+
+          <div>
+            <label className="text-sm font-medium">Your Name</label>
+
+            <input
+              type="text"
+              placeholder="Type Your Name"
+              className="input w-full border-none rounded-xl shadow"
+              {...register("name", {
+                required: "name is required",
+              })}
+            />
+
+            <p className="text-sm text-red-500 mt-1">
+              {errors.name?.message}
+            </p>
+          </div>
+          <div>
+            <label className="text-sm font-medium">Photo Url</label>
+
+            <input
+              type="text"
+              placeholder="Type Your Photo Url"
+              className="input w-full border-none rounded-xl shadow"
+              {...register("photo", {
+                required: "photo Url is required",
+              })}
+            />
+
+            <p className="text-sm text-red-500 mt-1">
+              {errors.photo?.message}
+            </p>
+          </div>
+          <div>
+            <label className="text-sm font-medium">Email</label>
+
+            <input
+              type="email"
+              placeholder="Email"
+              className="input w-full border-none rounded-xl shadow"
+              {...register("email", {
+                required: "Email is required",
+              })}
+            />
+
+            <p className="text-sm text-red-500 mt-1">
+              {errors.email?.message}
+            </p>
+          </div>
+
+          <div>
+            <label className="text-sm font-medium">Password</label>
+
+            <div className="relative">
+              <input
+                type={isShowPassword ? "text" : "password"}
+                placeholder="Password"
+                className="input w-full border-none rounded-xl shadow pr-10"
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 8,
+                    message: "Password must be at least 8 characters",
+                  },
+                })}
+              />
+
+              <span
+                className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+                onClick={() => setIsShowPassword(!isShowPassword)}
+              >
+                <FaEye />
+              </span>
+            </div>
+
+            <p className="text-sm text-red-500 mt-1">
+              {errors.password?.required
+              }
+            </p>
+
+            <p
+              className={`text-xs mt-2 ${errors.password ? "text-red-500" : "text-gray-500"
+                }`}
+            >
+              Must be at least 8 characters with 1 uppercase and 1 number
+            </p>
+          </div>
+
+
+          <button
+            type="submit"
+            className="w-full mt-4 text-center py-2 rounded-xl bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold hover:from-orange-500 hover:to-yellow-600 transition"
+          >
+            Register
+          </button>
+        </form>
+
+
+        <div className="flex items-center gap-3">
+          <hr className="flex-1 border-gray-300" />
+          <span className="text-xs text-gray-500">or</span>
+          <hr className="flex-1 border-gray-300" />
+        </div>
+
+
+        <button className="w-full flex items-center justify-center gap-2 py-2 rounded-xl shadow hover:scale-105 transition">
+          <Image src={Google} alt="Google" width={20} height={20} />
+
+          <span className="text-sm font-medium">
+            Sign up with Google
+          </span>
+        </button>
+
+
+      </fieldset>
+    </div>
   );
-}
+};
+
+export default signUpPage;
