@@ -44,7 +44,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <NavLink href="/my-profile" >
+            <NavLink href="/my-Profile" >
               My Profile
             </NavLink>
           </li>
