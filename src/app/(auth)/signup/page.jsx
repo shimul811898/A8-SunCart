@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const signUpPage = () => {
   const {
@@ -131,7 +131,7 @@ const signUpPage = () => {
                 className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
                 onClick={() => setIsShowPassword(!isShowPassword)}
               >
-                <FaEye />
+                {isShowPassword ? <FaEye/> :<FaEyeSlash/> }
               </span>
             </div>
 
@@ -156,24 +156,7 @@ const signUpPage = () => {
             Register
           </button>
         </form>
-
-
-        <div className="flex items-center gap-3">
-          <hr className="flex-1 border-gray-300" />
-          <span className="text-xs text-gray-500">or</span>
-          <hr className="flex-1 border-gray-300" />
-        </div>
-
-
-        <button className="w-full flex items-center justify-center gap-2 py-2 rounded-xl shadow hover:scale-105 transition">
-          <Image src={Google} alt="Google" width={20} height={20} />
-
-          <span className="text-sm font-medium">
-            Sign up with Google
-          </span>
-        </button>
-
-
+        
       </fieldset>
     </div>
   );

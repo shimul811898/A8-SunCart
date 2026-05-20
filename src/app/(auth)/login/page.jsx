@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LoginPage = () => {
   const {
@@ -26,8 +26,15 @@ const LoginPage = () => {
       rememberMe: true,
       callbackURL: "/",
     });
-    console.log(res, error)
   };
+
+  const handleGoogleSignin = async() =>{
+     const data = await authClient.signIn.social({
+    provider: "google",
+  });
+   console.log(data, "data")
+  
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
@@ -89,7 +96,7 @@ const LoginPage = () => {
                 className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
                 onClick={() => setIsShowPassword(!isShowPassword)}
               >
-                <FaEye />
+                {isShowPassword ? <FaEye/> :<FaEyeSlash/> }
               </span>
             </div>
 
@@ -123,7 +130,7 @@ const LoginPage = () => {
         </div>
 
 
-        <button className="w-full flex items-center justify-center gap-2 py-2 rounded-xl shadow hover:scale-105 transition">
+        <button className="w-full flex items-center justify-center gap-2 py-2 rounded-xl shadow hover:scale-105 transition" onClick={handleGoogleSignin} >
           <Image src={Google} alt="Google" width={20} height={20} />
 
           <span className="text-sm font-medium">

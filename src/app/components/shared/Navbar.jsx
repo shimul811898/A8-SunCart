@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import userAvatar from "../../assets/Avater.jpg";
+import LoginImage from "../../assets/Login.jpg";
 import { FaSun } from "react-icons/fa";
 import NavLink from "./NavLink";
 import { authClient } from "@/lib/auth-client";
@@ -57,10 +58,10 @@ const Navbar = () => {
         ) : user ? (
           <div className="flex items-center gap-4">
           <div className="text-center">
-            <Image
-              src={userAvatar}
-              alt="User Avatar"
-              width={40}
+             <Image
+              src={LoginImage}
+              alt="LoginImage"
+              width={30}
               height={40}
               className="rounded-full border mx-auto "
             />
@@ -75,6 +76,13 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="flex items-center gap-3">
+             <Image
+              src={userAvatar}
+              alt="User Avatar"
+              width={40}
+              height={40}
+              className="rounded-full border mx-auto "
+            />
             <Link
               href="/login"
               className="btn text-white px-4 py-2 rounded-lg border-0 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600"
