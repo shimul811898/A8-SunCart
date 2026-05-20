@@ -43,6 +43,9 @@ const ProductCard = ({ photo }) => {
           <span className="text-orange-500 font-bold text-lg">
             ${photo.price}
           </span>
+           <span className="text-green-600 text-xs font-medium">
+            {photo.stock} Stock
+          </span>
 
         </div>
 
