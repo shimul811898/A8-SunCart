@@ -81,7 +81,7 @@ const Navbar = () => {
               alt="User Avatar"
               width={40}
               height={40}
-              className="rounded-full border mx-auto "
+              className="rounded-full border"
             />
             <Link
               href="/login"

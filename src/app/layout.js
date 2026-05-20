@@ -3,7 +3,7 @@ dns.setServers(['8.8.8.8','8.8.4.4']);
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { Toaster } from "react-hot-toast";
 import Footer from "./components/shared/Footer";
 import Navbar from "./components/shared/Navbar";
 
@@ -35,6 +35,10 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+         <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
 
       </body>
     </html>

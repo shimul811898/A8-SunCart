@@ -32,10 +32,11 @@ const signUpPage = () => {
     });
     console.log(res, error)
     if (error) {
-      alert(error.message);
+      toast.error(error.message || "Sign Up failed");
+        return;
     }
     if (res) {
-      alert("Sign Up Succesfully");
+      toast.success("Sign Up successfully");
     }
   };
 

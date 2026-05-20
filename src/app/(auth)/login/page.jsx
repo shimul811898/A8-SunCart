@@ -1,5 +1,5 @@
 "use client";
-
+import { toast } from "react-hot-toast";
 import Google from "@/app/assets/Google.jpg";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
@@ -26,14 +26,32 @@ const LoginPage = () => {
       rememberMe: true,
       callbackURL: "/",
     });
+    if (error) {
+      toast.error(error.message || "Login failed");
+      return;
+    }
+    if (res) {
+      toast.success("Login successfully");
+    }
   };
 
-  const handleGoogleSignin = async() =>{
-     const data = await authClient.signIn.social({
-    provider: "google",
-  });
-   console.log(data, "data")
-  
+  const handleGoogleSignin = async () => {
+    try {
+      const data = await authClient.signIn.social({
+        provider: "google",
+      });
+      console.log(data, "data")
+
+      toast.success("Google login successful");
+
+      console.log(data, "data");
+    } 
+    catch (error) {
+      toast.error("Google login failed");
+      console.log(error);
+    }
+
+
   }
 
   return (
@@ -96,7 +114,7 @@ const LoginPage = () => {
                 className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
                 onClick={() => setIsShowPassword(!isShowPassword)}
               >
-                {isShowPassword ? <FaEye/> :<FaEyeSlash/> }
+                {isShowPassword ? <FaEye /> : <FaEyeSlash />}
               </span>
             </div>
 
