@@ -1,10 +1,10 @@
 "use client"
-import { Spinner } from "@heroui/react";
+
+import { Avatar, Spinner } from "@heroui/react";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import userAvatar from "../../assets/Avater.jpg";
-import LoginImage from "../../assets/Login.jpg";
 import { FaSun } from "react-icons/fa";
 import NavLink from "./NavLink";
 import { authClient } from "@/lib/auth-client";
@@ -57,26 +57,27 @@ const Navbar = () => {
           </div>
         ) : user ? (
           <div className="flex items-center gap-4">
-          <div className="text-center">
-             <Image
-              src={LoginImage}
-              alt="LoginImage"
-              width={30}
-              height={40}
-              className="rounded-full border mx-auto "
-            />
-            <p className="text-gray-400 font-bold text-[16px]" >{user.name}</p>
-          </div>
+            <div className="text-center">
+              <Avatar>
+                <Avatar.Image
+                  alt="John Doe"
+                  src={user?.image}
+                  referrerPolicy="no-referrer"
+                />
+
+                <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+              </Avatar>
+            </div>
 
             <button
               className="btn text-white px-4 py-2 rounded-lg border-0 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600"
-             onClick={async() => await authClient.signOut()} >
+              onClick={async () => await authClient.signOut()} >
               Logout
             </button>
           </div>
         ) : (
           <div className="flex items-center gap-3">
-             <Image
+            <Image
               src={userAvatar}
               alt="User Avatar"
               width={40}

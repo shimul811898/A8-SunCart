@@ -1,9 +1,9 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
+
 import { authClient } from "@/lib/auth-client";
-import { Spinner } from "@heroui/react";
-import LoginImage from "@/app/assets/Login.jpg";
+import { Avatar, Spinner } from "@heroui/react";
+import { UpdateUserModal } from "../components/shared/UpdateUserModal";
+
 
 const Profile = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -23,24 +23,24 @@ const Profile = () => {
             <div>
               <h1 className="bg-gradient-to-r from-orange-500 via-amber-350 to-orange-300 bg-clip-text text-transparent text-center font-bold py-8 text-4xl " >Your Profile Info</h1>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="text-start">
-                <Image
-                  src={LoginImage}
-                  alt="LoginImage"
-                  width={200}
-                  height={200}
-                  className="rounded-full border mx-auto "
+            <div className="text-center mx-auto card shadow z-30 ">
+              <Avatar  className="mx-auto rounded-full size-30 " >
+                <Avatar.Image
+                  alt={user?.name || "User"}
+                  src={user?.image}
+                  referrerPolicy="no-referrer"
+                  className="rounded-full size-30 "
                 />
-                <div className="pl-10 mt-5 space-y-3">
-                  <p className=" font-bold text-[16px]" >Name: {user.name}</p>
-                  <p className=" font-bold text-[16px]" >Email: {user.email}</p>
-                  <p className=" font-bold text-[16px]" >Address : Dhaka,Bangladesh</p>
-                  <p className=" font-bold text-[16px]" >Phone-Number : 1234567890</p>
-                </div>
 
+                <Avatar.Fallback>
+                  {user?.name?.charAt(0)}
+                </Avatar.Fallback>
+              </Avatar>
+              <p className="font-bold" >{user.name}</p>
+              <p  >{user.email}</p>
+              <div>
+                <UpdateUserModal />
               </div>
-
             </div>
           </div>
         ) : (
